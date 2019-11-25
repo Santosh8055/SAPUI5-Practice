@@ -12,23 +12,7 @@ sap.ui.define(
         },
 
         onOpenDialog: function() {
-          console.log(Controller);
-          var oView = this.getView();
-
-          // create dialog lazily
-          if (!this.byId("helloDialog")) {
-            Fragment.load({
-              id: oView.getId(),
-              name: "vistex.statements.theme.ThemeDesigner.view.HelloPanel",
-              controller: this
-            }).then(function(oDialog) {
-              // connect dialog to the root view of this component (models, lifecycle)
-              oView.addDependent(oDialog);
-              oDialog.open();
-            });
-          } else {
-            this.byId("helloDialog").open();
-          }
+          this.getOwnerComponent().openHelloDialog();
         },
         onCloseDialog: function() {
           this.byId("helloDialog").close();

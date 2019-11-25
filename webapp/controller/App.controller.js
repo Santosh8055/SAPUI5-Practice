@@ -21,6 +21,9 @@ sap.ui.define(
         },
         handlePress: function() {
           MessageToast.show("Hello world");
+        },
+        onOpenDialog: function() {
+          this.getOwnerComponent().openHelloDialog();
         }
       }
     );

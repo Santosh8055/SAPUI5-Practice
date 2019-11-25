@@ -13,12 +13,22 @@ sap.ui.jsview("vistex.statements.theme.ThemeDesigner.view.App", {
           initialPage: "page1",
           pages: [
             new sap.m.Page("page1", {
-              title: "Hello World",
-              showNavButton: false,
+              title: "{i18n>appTitle}",
+              headerContent: [
+                new sap.m.Button({
+                  icon: "sap-icon://hello-world",
+                  press: [oController.onOpenDialog, oController]
+                })
+              ],
               content: [
                 sap.ui.view({
                   viewName:
                     "vistex.statements.theme.ThemeDesigner.view.HelloPanel",
+                  type: sap.ui.core.mvc.ViewType.JS
+                }),
+                sap.ui.view({
+                  viewName:
+                    "vistex.statements.theme.ThemeDesigner.view.InvoiceList",
                   type: sap.ui.core.mvc.ViewType.JS
                 })
               ]

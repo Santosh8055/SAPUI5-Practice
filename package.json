@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "start": "ui5 serve",
+    "serve": "ui5 serve -o index.html",
     "lint": "eslint webapp",
     "build": "ui5 build -a --clean-dest",
     "build-self-contained": "ui5 build self-contained -a --clean-dest",
